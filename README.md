@@ -18,7 +18,6 @@ The study evaluates **i\***, **KAOS**, **UML**, and **BPMN** using the **Physics
 
 ## 📂 Repository
 - `paper/` → Full research paper PDF  
-- `figures/` → Diagrams and scoring tables  
 
 ## 📚 Reference
 Paper: *Cognitive Effectiveness in Requirements Engineering: A Comparative Framework for Visual Notation Evaluation* (Research Methodologies and Academic Writing, 2025).  
