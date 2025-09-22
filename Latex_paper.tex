@@ -1,0 +1,258 @@
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.21 of 2022/01/12
+%
+\documentclass[runningheads]{llncs}
+\usepackage{cite}
+\usepackage{colortbl}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+
+%
+\usepackage[T1]{fontenc}
+% T1 fonts will be used to generate the final print and online PDFs,
+% so please use T1 fonts in your manuscript whenever possible.
+% Other font encondings may result in incorrect characters.
+%
+\usepackage{graphicx}
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+%
+% If you use the hyperref package, please uncomment the following two lines
+% to display URLs in blue roman font according to Springer's eBook style:
+%\usepackage{color}
+%\renewcommand\UrlFont{\color{blue}\rmfamily}
+%\urlstyle{rm}
+%
+\begin{document}
+%
+\title{Cognitive Effectiveness in Requirements Engineering: A Comparative Framework for Visual Notation Evaluation}
+%
+%\titlerunning{Abbreviated paper title}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+\author{Daria Maria Meseșan\inst{1}}
+%
+\authorrunning{Daria M. Meseșan}
+% First names are abbreviated in the running head.
+% If there are more than two authors, 'et al.' is used.
+%
+\institute{Research Methodologies and Academic Writing, Business Modeling and Distributed Computing Master's Degree, Babeș Bolyai University, Cluj-Napoca, Romania}
+%
+\maketitle              % typeset the header of the contribution
+%
+\begin{abstract}
+Visual notations represent the building base of diagrams in Requirements Engineering (RE). They simplify the representation of complex systems and improve communication between stakeholders by assessing cognitive effectiveness. However, the visual quality of modeling languages varies significantly, impacting their usability and adoption. Building on previous studies on Physics of Notations (PoN) and evaluation of i*, this paper introduces a comparative framework for evaluating visual notations based on five key principles: Semiotic Clarity, Perceptual Discriminability, Semantic Transparency, Visual Expressiveness, and Graphic Economy. We apply the method to four widely used visual notations: i*, KAOS, UML and BPMN, using criteria derived from prior studies.  Results revealed significant variations: BPMN demonstrated the highest cognitive effectiveness with consistently high scores across all dimensions, while i* faced challenges in clarity, transparency, and discriminability. UML showcased adaptability and transparency, but struggled with graphic economy, and KAOS achieved moderate performance across all principles. The trade-offs between principles, such as balancing graphic economy with expressiveness, underscore the importance of context-specific notation selection. This study highlights the need for future work in integrating notations to leverage their complementary strengths, fostering more effective tools for RE tasks.
+
+\keywords{Requirements Engineering  \and Visual Notation \and Physics of Notation \and Cognitive Effectiveness \and Comparative Analysis.}
+\end{abstract}
+%
+%
+%
+\section{Introduction}
+In the context of building complex engineering systems and technologies driven by Artificial Intelligence (AI), \textbf{ requirements engineering (RE)} has become a critical step in the early stages of system development. The primary objective of RE is to clearly define the problem a system aims to solve while aligning proposed features with stakeholder needs. This process not only minimizes persistent and costly errors but also ensures that the system fulfills its intended purpose efficiently \cite{Blouin2013}.
+
+Requirements Engineering heavily relies on visual diagrams to represent concepts, relationships, and processes, making complex systems easier to understand. These diagrams play a vital role in facilitating communication between technical teams and stakeholders.\cite{Yu1997} The \textbf{visual syntax}, which defines the set of graphical elements used to construct these diagrams, is a key factor in their cognitive effectiveness \cite{Moody2010}. However, despite its importance, visual syntax remains an under-explored area in RE research, with much of the focus traditionally placed on the semantics of notations---the meaning associated with constructs---rather than their perceptual representation \cite{Moody2010}.
+
+The aim of this paper is to develop a comparative framework for evaluating visual notations using the principles of the Physics of Notation. We use the research by Moody et al. \cite{Moody2010} on i* as a starting point and extend it to other visual modeling languages in a comparative way. Specifically, the research addresses the following questions:
+\begin{itemize}
+    \item How do i*, KAOS, UML, and BPMN perform in terms of cognitive effectiveness?
+    \item What trade-offs exist between these notations in their support for different RE tasks?
+    \item How can these insights guide the selection or combination of notations in RE practice?
+\end{itemize}
+    
+To answer these questions, we employ a theoretical evaluation methodology, scoring each notation against five PoN principles: Semiotic Clarity, Perceptual Discriminability, Semantic Transparency, Visual Expressiveness and Graphic Economy. The results provide actionable insights into the strengths and limitations of each notation, offering an overview on what might be the best visual notation for different situations.
+
+
+
+\section{Related Work}
+\textbf{Visual notations} are structured constructions of graphical symbols, compositional rules, and semantics designed to represent complex systems and processes \cite{ElGhafar2014, Moody2010}. They bridge communication gaps between stakeholders by providing intuitive, easy-to-understand representations of technical concepts. The primary goal of visual notation is to improve\textbf{ cognitive effectiveness} -- the ease, speed, and precision with which users process information \cite{Moody2010}. 
+
+\subsection{Frameworks for Visual Notation Evaluation}
+
+Evaluating visual notations requires systematic frameworks that assess their usability and effectiveness. Over the years, several frameworks have been proposed, each with its strengths and limitations.
+
+\textbf{Cognitive Dimensions of Notations (CDs)}
+Cognitive Dimensions of Notations (CDs) framework is one of the earliest tools for evaluating cognitive artifacts. It defines 13 dimensions, such as \textit{error-proneness} and \textit{abstraction gradient}, providing a vocabulary for analyzing usability \cite{Green1989}. However, CDs lack specificity for visual notations, as they do not include detailed metrics for evaluating graphical representations \cite{Moody2010}.
+
+\textbf{Semiotic Quality (SEQUAL)}
+ Semiotic Quality (SEQUAL) framework evaluates modeling languages based on the semiotic ladder, addressing levels such as syntax, semantics, and pragmatics \cite{Lindland1994}. While comprehensive, SEQUAL primarily focuses on conceptual and theoretical quality rather than visual syntax, limiting its application to visual notation evaluation \cite{Moody2009}.
+
+\textbf{The Physics of Notations Framework}
+Among the most prominent approaches for improving visual syntax is the \textbf{Physics of Notations (PoN)} framework, introduced by Moody \cite{Moody2009}. PoN establishes nine principles for designing cognitively effective visual notations. These principles emphasize the importance of designing symbols and diagrams that are intuitive, visually distinct, and manageable in complexity. Studies have demonstrated the positive impact of PoN in evaluating and refining RE notations, particularly for addressing cognitive load and enhancing usability \cite{Moody2010, Genon2011, ElGhafar2014}.
+
+\subsection{Key Visual Notations in Requirements Engineering}
+Visual notations represent the modeling language in Requirements Engineering (RE), aiding in the specification, analysis, and validation of complex systems. In this section we provide an overview of four widely used notations, emphasizing their features, applications, and challenges as addressed in the literature.
+
+\textbf{\textit{i*}} is a goal-oriented visual notation introduced by Yu \cite{Yu1997} which focuses on modeling requirements engineering systems by capturing dependencies and rationales among stakeholders. It uses two models: the Strategic Dependency (SD) model to outline relationships and the Strategic Rationale (SR) model to explore motivations behind goals. \textbf{\textit{KAOS}}, a goal-oriented language, specializes in hierarchical goal decomposition and traceability, particularly suited for safety-critical systems. \textbf{\textit{UML}} provides a versatile framework with multiple diagram types, such as class, sequence, and activity diagrams, offering broad applicability across system design tasks. Lastly, \textbf{\textit{BPMN}} supports process modeling with standardized symbols, bridging technical and business stakeholders through its focus on workflows.
+
+\subsection{Applications of PoN in Visual Notations}
+Several studies have applied PoN principles to evaluate and refine visual notations, providing insights into their cognitive effectiveness:
+
+\textbf{i*:} Moody et al. \cite{Moody2010} conducted a detailed analysis of i* using PoN, identifying critical issues such as symbol overload and limited perceptual discriminability. i* remains a robust tool for capturing stakeholder goals but struggles with large-scale diagram readability. Recommendations included simplifying the notation’s visual vocabulary and improving semantic transparency \cite{Moody2010}.
+
+\textbf{BPMN:} Genon et al. \cite{Genon2011} applied PoN to BPMN 2.0, highlighting its strengths in standardization but also its deficiencies in dual coding and perceptual discriminability. Their findings emphasized the need for improved semantic transparency (more intuitive symbols) and better textual integration. 
+
+\textbf{UML:} Evaluations of UML underscore its flexibility but critique its graphic economy. Studies by Moody et al.\cite{Moody2008} suggest limiting the number of diagram types in specific contexts to reduce cognitive load. Moody and van Hillegersberg assessed UML diagrams, revealing that while UML excels in integration of diagrams across different domains, its extensive symbol set often compromises graphic economy and the lack of color reduces visual expressiveness. \cite{Moody2008}.
+
+\textbf{KAOS:} Studies on KAOS, including those by Dardenne et al. and Nwokeji et al. \cite{Dardenne1993, Nwokeji2013}, highlight its strengths in goal decomposition and formal validation but emphasize the need for improving its visual syntax to enhance accessibility for novice users. In addition, Matulevicius et al. \cite{Matulevicius2007} analyzed KAOS's visual syntax, identifying areas for improvement in modularity and integration. Their recommendations include enhanced structuring techniques and better visual clues for cognitive integration.
+
+Despite extensive research, gaps remain in the systematic evaluation of visual notations using PoN principles. Few studies provide comparative analyses across multiple notations, and trade-offs between principles, such as balancing semantic transparency with graphic economy, are rarely explored. Additionally, the combined use of notations like i*, KAOS, UML, and BPMN for comprehensive RE tasks has not been sufficiently investigated.  Integrating notations, such as using i* for goal modeling and BPMN for process modeling, could address specific RE challenges, but this approach requires further investigation. This paper addresses these gaps by providing a structured comparison of these notations, offering actionable recommendations.
+
+\section{Framework Methodology}
+
+This section outlines the detailed methodology we used to evaluate the cognitive effectiveness of visual notations in Requirements Engineering (RE), based on the Physics of Notations (PoN) framework. We propose a structured approach to assess visual notations against five principles: \textbf{Semiotic Clarity, Perceptual Discriminability, Semantic Transparency, Visual Expressiveness, and Graphic Economy.}
+
+\subsection{Criteria Application}
+\textbf{Semiotic Clarity:}
+The evaluation of semiotic clarity will focus exclusively on Symbol Overload, defined as the number of semantic constructs represented a single symbol representing multiple constructs \cite{Moody2009, Moody2010}. Symbol overload introduces perceptual ambiguity and challenges comprehension. To assess this, we calculate the average number of constructs per overloaded symbol and document specific instances where multiple constructs share one graphical symbol. 
+
+\textbf{Perceptual Discriminability:}
+Involves evaluating the uniqueness of visual variables across symbols and measure the perceptual distance between similar constructs \cite{Moody2010}. We calculate the number of symbols that look too much alike.
+
+\textbf{Semantic Transparency:}
+For this principle, we assess the degree to which symbols visually suggest their meanings \cite{Moody2010}. The evaluation is done by counting the symbols that intuitively align with their semantic purpose.
+
+\textbf{Visual Expressiveness:}
+We evaluate visual expressiveness by counting the distinct visual variables used in the visual notation \cite{Moody2010}. There are 8 visual variables (Orientation, Texture, Shape, Size, Color, Color hue, Arrangement, Saturation, Value) \cite{Moody2008} so we consider a number of 5 or more to be a high adherence to the principle. 
+
+\textbf{Graphic Economy:}
+Graph economy is evaluated by counting the total number of unique symbols in the notation and the score is given based on the ease of creating simpler diagrams. The human capacity to distinguish between different symbol categories is about 6 \cite{Miller1956}.
+
+\subsection{Scoring System}
+We propose a 1-to-3 scoring system,where each principle is scored on a scale of \textbf{1 (Low)}, \textbf{2 (Moderate)}, and \textbf{3 (High)}, with specific thresholds for each metric. The analysis involves generating specific metrics and scoring visual notations based on the outlined thresholds. The scoring system is summarized in Table~\ref{tab:scoring_system}.
+
+\begin{table}[h!]
+\centering
+\caption{Scoring System for Framework Evaluation\label{tab:scoring_system}}
+\begin{tabular}{|l|l|c|c|c|} \hline  
+
+\rowcolor[HTML]{EFEFEF} \textbf{Principle} & \textbf{Metric} & \cellcolor[HTML]{FFC7CE} \textbf{Low-1} & \cellcolor[HTML]{FFEB9C}\textbf{Moderate-2} & \cellcolor[HTML]{C6EFCE} \textbf{High-3} \\ \hline  
+
+\textbf{Semiotic Clarity} & Symbol Overload & $>$ 10 & 3--10 & $\leq 2$\\
+
+\textbf{Perceptual Discriminability} & Similar Symbols & $\geq 6$ & 3--5 & $\leq 2$ \\ 
+
+\textbf{Semantic Transparency} & Constructs Aligned & $\leq 2$ & 3--4 & $\geq 5$ \\   
+
+\textbf{Visual Expressiveness} & Visual Variables & $\leq 2$ & 3--4 & $\geq 5$ \\  
+
+\textbf{Graphic Economy} & Unique Symbols & $\geq 16$ & 7--15 & $\leq 6$ \\ \hline 
+
+\end{tabular}
+\end{table}
+
+\subsection{Trade-Off Analysis}
+To address potential conflicts between principles, a trade-off matrix is constructed to visualize interactions. The trade-off matrix presented in Figure~\ref{fig:principle-interactions} illustrates the interactions between the five evaluation principles and it replicates Moody’s et al. \cite{Moody2010} methodology. Positive interactions (+) indicate that improving one principle supports the other, while negative interactions (--) highlight conflicts where enhancing one principle might compromise another. Neutral interactions (+/-) suggest that the principles have little to no direct effect on each other. For example, improving \textbf{semantic transparency} often enhances \textbf{perceptual discriminability}, as intuitive symbols are easier to differentiate. Similarly, increasing \textbf{visual expressiveness} by using diverse visual variables supports both \textbf{semantic transparency and perceptual discriminability}. Conflicts arise when enhancing one principle compromises another.  For example, increasing \textbf{graphic economy}—by reducing the number of unique symbols to minimize cognitive load—can conflict with \textbf{visual expressiveness}. Neutral interactions (+/-) depend on context; for instance, improving \textbf{semiotic clarity} can either support or conflict with \textbf{graphic economy}, depending on whether redundant symbols are removed or additional ones are introduced.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1\textwidth]{Trade-offs.png}
+\caption{Interactions between principles: + (green cell) indicates a positive effect, -- (red cell) indicates a negative effect, and ~ (orange cell) indicates a neutral effect depending on the situation. Source: Moody et al. (2010), p.146 \cite{Moody2010}.}
+\label{fig:principle-interactions}
+\end{figure}
+
+
+\section{Results of Framework Application}
+This section presents our findings regarding the cognitive effectiveness evaluation for the four visual notations: \textit{i*}, \textit{KAOS}, \textit{UML}, and \textit{BPMN}, using the comparative framework proposed in the previous section. Table~\ref{tab:overall_results} summarizes the scores for each notation, categorized by the five principles of cognitive effectiveness from the Physics of Notations framework. Each score (Low, Moderate, or High) is supported by detailed reasoning and concrete examples.
+
+\subsubsection{General results of evaluation: }\textbf{BPMN} scored the highest in cognitive effectiveness, particularly excelling in perceptual discriminability and semantic transparency, making it ideal for process modeling. \textbf{KAOS }stood out in graphic economy, with a minimal and efficient symbol set that prioritizes simplicity and clarity. \textbf{UML} demonstrated strengths in perceptual discriminability and extensibility, offering flexibility for diverse use cases, though its extensive symbol set contributed to lower graphic economy.\textbf{ i*} performed well in visual expressiveness for a requirements engineering modeling language, utilizing multiple visual variables effectively, but it struggled with semiotic clarity and perceptual discriminability, indicating areas for improvement in symbol design and standardization.
+
+\begin{table}[h!]
+\centering
+\caption{Overall Evaluation Scores by Principle\label{tab:overall_results}}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\rowcolor[HTML]{EFEFEF} \textbf{Principle} & \textbf{i*} & \textbf{KAOS} & \textbf{UML} & \textbf{BPMN}\\
+\hline
+\textbf{Semiotic Clarity} & \cellcolor[HTML]{FFC7CE} 1-Low & \cellcolor[HTML]{FFEB9C} 2-Moderate & \cellcolor[HTML]{FFC7CE} 1-Low  & \cellcolor[HTML]{C6EFCE} 3-High\\
+\textbf{Perceptual Discriminability} & \cellcolor[HTML]{FFC7CE} 1-Low & \cellcolor[HTML]{FFEB9C} 2-Moderate & \cellcolor[HTML]{FFEB9C} 2-Moderate & \cellcolor[HTML]{C6EFCE} 3-High\\
+\textbf{Semantic Transparency} & \cellcolor[HTML]{FFC7CE} 1-Low & \cellcolor[HTML]{FFC7CE} 1-Low & \cellcolor[HTML]{FFEB9C} 2-Moderate & \cellcolor[HTML]{FFEB9C} 2-Moderate\\
+\textbf{Visual Expressiveness} & \cellcolor[HTML]{FFEB9C} 2-Moderate & \cellcolor[HTML]{FFEB9C} 2-Moderate & \cellcolor[HTML]{FFC7CE} 1-Low& \cellcolor[HTML]{C6EFCE} 3-High\\
+\textbf{Graphic Economy} & \cellcolor[HTML]{FFC7CE} 1-Low & \cellcolor[HTML]{FFEB9C} 2-Moderate & \cellcolor[HTML]{FFC7CE} 1-Low & \cellcolor[HTML]{FFEB9C} 2-Moderate\\
+\hline
+\textbf{Total Score} & \textbf{6} & \textbf{9} & \textbf{7}& \textbf{13}\\\hline
+
+\end{tabular}%
+}
+\end{table}
+
+\subsubsection{Semiotic Clarity} - We used number of overloaded symbols as evaluation metric 
+
+\textit{i*}: Scored \textbf{Low (1)} due to \textbf{17 overloaded symbols}, including 22 relationships represented by only 5 arrow types. For example, \textit{actor associations}, \textit{dependencies}, and \textit{contribution links} use identical arrow shapes, creating confusion \cite{Moody2010}.
+
+\textit{KAOS}: Scored \textbf{Moderate (2)} with \textbf{8 overloaded symbols}, such as 4 types of parallelograms for \textit{goals}, \textit{softgoals}, \textit{requirements}, and \textit{expectations}, and 4 arrow types. Subtle variations like border thickness and orientation are used for disambiguation. \cite{Matulevicius2007}.
+
+\textit{UML}: Scored \textbf{Low (1)} due to \textbf{over 20 overloaded symbols} in Class Diagrams. For instance, dashed arrows can represent dependencies, interface realizations, or package imports, relying heavily on context \cite{Moody2008}.
+
+\textit{BPMN}: Scored \textbf{High (3)} with only \textbf{2 overloaded symbols}, such as gateways represented by plain or crossed diamonds. This minimal overload ensures strong semiotic clarity \cite{Genon2011}.
+
+\subsubsection{Perceptual Discriminability} - We calculated the number of symbols that are hard to distinguish. 
+
+\textit{i*}: Scored\textbf{ Low (1)} with \textbf{23 similar symbols}, including 4\textit{ actor} types, 2 \textit{belief} symbols, 2 \textit{dependency rationale} symbols, 6 \textit{actor association} arrows and 9 \textit{contribution} arrows. Association links and contribution links are visually indistinguishable without textual labels \cite{Moody2010}.
+
+\textit{KAOS}: \textbf{Scored Moderate (2)} with \textbf{5 similar symbols}, such as parallelograms for \textit{requirements} and\textit{ soft goals}. Visual differentiation relies on border thickness or shading, which can be difficult to distinguish in complex diagrams \cite{Matulevicius2007}.
+
+\textit{UML}: \textbf{Scored Moderate (2)} with\textbf{ 5 similar symbols}, including association, aggregation, and composition links. Distinctions depend on small variations like hollow or filled diamonds, which are not easily perceptible \cite{Moody2008}.
+
+\textit{BPMN}: Scored \textbf{High (3)} with only \textbf{2 similar symbols}, where a \textit{collapsed sub-process} might resemble a\textit{ task}. Also, in some cases, \textit{Pools} and \textit{Lanes} could be easily confused by novice users. But overall, the use of distinct shapes and markers ensures high discriminability \cite{Moody2010}.
+
+\subsubsection{Semantic Transparency} - Scored the number of constructs that visually represent their meaning. 
+
+\textit{i*}: Scored \textbf{Low (1)} due to abstract, semantically opaque symbols that require prior learning. For example, \textit{actors} are represented by non-intuitive shapes, and only the cloud symbol for \textit{belief} achieves semantic transparency as a thought bubble. Improvements like stick figures for actors could enhance intuitiveness\cite{Moody2010}.
+
+\textit{KAOS}: Scored \textbf{Low (1)} with only two transparent symbols, the house-shaped symbol for \textit{domain/property} or lightning symbol for \textit{goals conflict}. The parallelogram shapes are not semantic transparent. \cite{Matulevicius2007}.
+
+\textit{UML}: Scored \textbf{Moderate (2)}, as symbols like \textit{actors}, \textit{classes}, \textit{components} and \textit{interfaces} are intuitive, but relationships rely on similar arrows, requiring textual clarification for novice users \cite{Moody2008}.
+
+\textit{BPMN}: Scored \textbf{Moderate (2)} due to semantically opaque symbols like the \textit{data file} symbol (resembling a sticky note) and gears (used for \textit{service tasks}). As mentioned before, it is hard to distinguish and to guess the meaning of \textit{Pools} and \textit{Lanes} just by looking at their symbols. Some icons, like colored events, icons for different kind of tasks and diamonds for gateways, are intuitive, but in general transparency is inconsistent\cite{Genon2011}.
+
+\subsubsection{Visual Expressiveness} - scored the number of visual variables used.
+
+\textit{i*}: Scored \textbf{Moderate (2) }as it uses \textbf{3 visual variables}: shape, brightness, and orientation. While it exceeds most RE notations relying on a single, or two variables, it lacks color, texture, or arrangement, limiting its adherence to the principle \cite{Moody2010}.
+
+\textit{KAOS}: Scored \textbf{Moderate (2)}, employing \textbf{4 visual variables}: shape, size, orientation, and element alignment. However, the absence of effective use of color or texture reduces its overall expressiveness \cite{Matulevicius2007}.
+
+\textit{UML}: Scored \textbf{Low (1)}, with most diagrams using only \textbf{2 visual variables}: shape and value. Activity Diagrams stand out by utilizing spatial arrangement (x, y), but the lack of color or texture limits expressiveness \cite{Moody2008}.
+
+\textit{BPMN}: Scored\textbf{ High (3)}, using \textbf{5 visual variables}: shape, color, arrangement, grain, and brightness. While color usage could be expanded even more, the existing variables provide a visually enriched representation \cite{Genon2011}.
+
+
+\subsubsection{Graphic Economy} - Calculated the number of unique symbols 
+
+\textit{i*}: Scored\textbf{ Low (1)} with \textbf{16 unique symbols}, exceeding the threshold for moderate simplicity. While providing flexibility, the large symbol set increases complexity and risks cognitive overload for users \cite{Moody2010}.
+
+\textit{KAOS}: Scored \textbf{Moderate (2)} with \textbf{9 unique symbols}, striking a balance between simplicity and expressiveness. Its symbol set includes constructs like goals, obstacles, agents, and domain properties, making it efficient without being overly complex \cite{Nwokeji2013}.
+
+\textit{UML}: Scored \textbf{Low (1)} with \textbf{31 unique symbols}, far exceeding the threshold for simplicity. The large symbol set risks overwhelming users, particularly novices, and complicates diagram interpretation \cite{Moody2008}.
+
+\textit{BPMN}: Scored \textbf{Moderate (2)} with \textbf{10 unique symbols} in practical usage, despite having a nominal complexity of 171 symbols. Practical usage includes core constructs like events, activities, gateways, and data objects, making it more accessible for novices \cite{Genon2011}.
+
+\section{Limitations and Future Work}
+
+The proposed framework has a series of limitations that offer opportunities for future research. While we applied the Physics of Notations (PoN) framework, we did not include all nine principles. Principles such as cognitive fit and cognitive integration are particularly challenging to measure quantitatively, as they rely on specific contexts and personal interpretations. Additionally, we assessed perceptual discriminability and semantic transparency  using prior studies of the analyzed visual notations, but further research should involve investigations with real participants to gather statistical evidence on their effectiveness. We also limited the evaluation to four visual notations---i*, KAOS, UML, and BPMN---and applied only the PoN framework, without combining it with other evaluation methods. Furthermore, while PoN effectively evaluates visual syntax, it does not address practical factors like tool support or the adoption of notations in real-world applications. 
+
+Future work will focus on addressing the limitations identified in this study. We plan to expand the framework to include all nine principles from the Physics of Notations (PoN) and broaden its scope to evaluate additional notations and modeling languages, such as SysML and ArchiMate. To provide a more detailed understanding of subjective principles like perceptual discriminability and semantic transparency, we aim to conduct studies involving user experiments and statistical analysis. We also intend to extend the evaluation of semiotic clarity to include symbol redundancy, balance, excess, and deficit, rather than focusing solely on symbol overload. By integrating principles from other evaluation frameworks, we seek to enhance the robustness and comprehensiveness of the framework. Additionally, we will explore ways to automate the framework, making it adaptable for use across a wider range of notations and contexts.
+
+\section{Conclusion}
+This study extended the work of Moody et al. \cite{Moody2010} on i* by applying the PoN methodology to evaluate four widely used visual notations. We implemented a comparative evaluation framework, highlighting the importance of balancing cognitive effectiveness principles in RE. The analysis revealed that BPMN is the most effective, excelling across multiple principles, while i* demonstrated areas for refinement, particularly in semiotic clarity and perceptual discriminability. KAOS was notable for its simplicity and graphic economy, and UML demonstrated versatility, but faced challenges with its extensive symbol set. These findings underscore the unique strengths and limitations of each notation, highlighting the importance of aligning notation choice with project requirements.
+
+
+
+
+%
+% ---- Bibliography ----
+%
+% BibTeX users should specify bibliography style 'splncs04'.
+% References will then be sorted and formatted in the correct style.
+%
+% \bibliographystyle{splncs04}
+% \bibliography{mybibliography}
+%
+\bibliographystyle{plain}   
+\bibliography{references} 
+\end{document}
+
